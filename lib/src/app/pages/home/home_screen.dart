@@ -1,4 +1,5 @@
 import 'package:bento_app/design_system/core/extensions/screen_utils_extesion.dart';
+import 'package:bento_app/design_system/core/features/atoms/tokens/app_colors.dart';
 import 'package:bento_app/design_system/core/features/atoms/tokens/gaps.dart';
 import 'package:bento_app/design_system/core/features/molecules/label/label.dart';
 import 'package:bento_app/design_system/core/features/organisms/item_tile/item_tile.dart';
@@ -23,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     controller = getIt<HomeController>();
-    controller.getAllCategories();
     controller.getProducts();
     super.initState();
   }
@@ -43,15 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const DescriptionCardComponent(),
                   DSGaps.v16,
+                  const DescriptionCardComponent(),
+                  DSGaps.v8,
                   const SlideBanners(),
                   Container(
                     width: ScreenUtilsHelpers.screenWidth,
                     padding: EdgeInsets.only(left: 10.w),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: DSLabel.subtitle1Bold(label: 'Shop by category'),
+                      child: DSLabel.subTitle(label: 'Shop by category'),
                     ),
                   ),
                   const CategoriesComponent(),
@@ -84,17 +85,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 itemCount: controller.products.length,
                                 itemBuilder: (context, index) {
+                                  final product = controller.products[index];
+                                  Color backgroundColor;
+                                  if (product.name.contains('Orange')) {
+                                    backgroundColor = AppColors.colorOrange;
+                                  } else if (product.name.contains('Cabbage')) {
+                                    backgroundColor = AppColors.colorCabbage;
+                                  } else {
+                                    backgroundColor =
+                                        AppColors.colorCabbage; // Color default
+                                  }
                                   return ItemTile(
                                       isFavorited: false,
+                                      backgroundColorCard: backgroundColor,
                                       item: controller.products[index]);
                                 }),
                           );
                         } else {
                           return Center(
-                            child: DSLabel.subtitle2Regular(
+                            child: DSLabel.description(
                               label: 'Nenhum produto encontrado',
                               overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
                             ),
                           );
                         }

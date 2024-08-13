@@ -1,3 +1,4 @@
+import 'package:bento_app/design_system/core/features/molecules/label/label.dart';
 import 'package:flutter/material.dart';
 import '../../../extensions/screen_utils_extesion.dart';
 import '../../atoms/tokens/app_colors.dart';
@@ -25,18 +26,8 @@ class CardApresentation extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  description ?? 'error',
-                  style: const TextStyle(
-                      color: AppColors.secondaryColor,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  descriptionTwo ?? 'error',
-                  style: const TextStyle(
-                      color: AppColors.secondaryColor,
-                      fontWeight: FontWeight.bold),
-                ),
+                DSLabel.subTitle(label: description ?? 'error'),
+                DSLabel.subTitle(label: descriptionTwo ?? 'error')
               ],
             ),
           ),

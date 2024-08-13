@@ -1,3 +1,5 @@
+import 'package:bento_app/design_system/core/extensions/screen_utils_extesion.dart';
+import 'package:bento_app/design_system/core/features/atoms/tokens/gaps.dart';
 import 'package:bento_app/design_system/core/features/molecules/label/label.dart';
 
 import 'package:flutter/cupertino.dart';
@@ -92,12 +94,22 @@ class _BaseScreenState extends State<BaseScreen> with TickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    DSLabel.subtitle1Bold(
+                    DSLabel.title(
                       label: 'Delivery',
                     ),
-                    DSLabel.body1(
-                      label: 'Bacangan, Sambit',
-                      color: Colors.grey.shade400,
+                    Row(
+                      children: [
+                        DSLabel.infoDescription(
+                          label: 'Bacangan, Sambit',
+                          color: Colors.grey.shade400,
+                        ),
+                        DSGaps.h2,
+                        Icon(
+                          size: 18.h,
+                          Icons.keyboard_arrow_down,
+                          color: AppColors.secondaryColor,
+                        )
+                      ],
                     )
                   ],
                 ),
@@ -117,20 +129,25 @@ class _BaseScreenState extends State<BaseScreen> with TickerProviderStateMixin {
               const NeverScrollableScrollPhysics(), // swipe navigation handling is not supported
           // controller: _tabController,
           controller: _motionTabBarController,
-          children: const <Widget>[
+          children: <Widget>[
             Center(
-              child: Text("HOME"),
-            ),
+                child: DSLabel.description(
+              label: 'Home',
+            )),
             Center(
-              child: Text("Delas"),
+              child: DSLabel.description(
+                label: 'Delas',
+              ),
             ),
-            HomeScreen(),
+            const HomeScreen(),
             Center(
-              child: Text("Cart"),
-            ),
+                child: DSLabel.description(
+              label: "Cart",
+            )),
             Center(
-              child: Text("Account"),
-            ),
+                child: DSLabel.description(
+              label: "Account",
+            )),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:bento_app/design_system/core/features/atoms/tokens/app_colors.dart';
+import 'package:bento_app/design_system/core/features/molecules/label/label.dart';
 import 'package:bento_app/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,24 +61,14 @@ class _ItemTileState extends State<ItemTile> {
                   ),
 
                   // Nome
-                  Text(
-                    widget.item.name,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  DSLabel.description(label: widget.item.name),
 
                   // Preço - Unidade
                   Row(children: [
-                    Text(
-                      widget.item.price.toStringAsFixed(2),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
+                    DSLabel.description(
+                      label: "\$${widget.item.price.toStringAsFixed(2)}",
+                      color: Colors.black,
+                    )
                   ]),
                 ],
               ),

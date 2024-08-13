@@ -1,148 +1,44 @@
-import 'package:flutter/material.dart';
-
 import '../../atoms/tokens/app_typography.dart';
 import 'label_component.dart';
 
 class DSLabel extends LabelComponent {
-  DSLabel.displayLarge({
+  DSLabel.title({
     super.key,
     super.color,
     required super.label,
     super.maxLines,
     super.overflow,
   }) : super(
-          style: AppTypography.displayLarge(color: color),
-        );
-  DSLabel.displayMedium({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-  }) : super(
-          style: AppTypography.displayMedium(color: color),
-        );
-  DSLabel.displaySmall({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-  }) : super(
-          style: AppTypography.displaySmall(color: color),
+          style: AppTypography.title(color: color),
         );
 
-  DSLabel.h2({
+  DSLabel.description({
     super.key,
     super.color,
     required super.label,
     super.maxLines,
     super.overflow,
-    super.textAlign,
   }) : super(
-          style: AppTypography.h2(color: color),
+          style: AppTypography.description(color: color),
         );
 
-  DSLabel.h3({
+  DSLabel.subTitle({
     super.key,
     super.color,
     required super.label,
     super.maxLines,
     super.overflow,
-    super.textAlign,
   }) : super(
-          style: AppTypography.h3(color),
+          style: AppTypography.subTitle(color: color),
         );
 
-  DSLabel.h4({
+  DSLabel.infoDescription({
     super.key,
     super.color,
     required super.label,
     super.maxLines,
     super.overflow,
   }) : super(
-          style: AppTypography.h4(color),
-        );
-
-  DSLabel.h5({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-  }) : super(
-          style: AppTypography.h5(color: color),
-        );
-
-  DSLabel.subtitle1Bold({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-  }) : super(
-          style: AppTypography.subtitle1(color, FontWeight.bold),
-        );
-  DSLabel.subtitle1Regular({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-  }) : super(
-          style: AppTypography.subtitle1(color, FontWeight.w400),
-        );
-
-  DSLabel.subtitle2Bold({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-  }) : super(
-          style: AppTypography.subtitle2(color, FontWeight.w600),
-        );
-
-  DSLabel.subtitle2Regular({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-    super.textAlign,
-  }) : super(
-          style: AppTypography.subtitle1(color, FontWeight.bold),
-        );
-
-  DSLabel.subtitle3Bold({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-    super.textAlign,
-  }) : super(
-          style: AppTypography.subtitle3(color, FontWeight.w600),
-        );
-
-  DSLabel.subtitle3Regular({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-    super.textAlign,
-  }) : super(
-          style: AppTypography.subtitle1(color, FontWeight.w400),
-        );
-
-  DSLabel.body1({
-    super.key,
-    super.color,
-    required super.label,
-    super.maxLines,
-    super.overflow,
-  }) : super(
-          style: AppTypography.body1(color),
+          style: AppTypography.infoDescription(color: color),
         );
 }

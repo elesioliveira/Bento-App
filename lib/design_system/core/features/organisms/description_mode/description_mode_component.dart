@@ -15,8 +15,8 @@ class DescriptionModeComponent extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          DSLabel.h4(label: 'Today\'s Special'),
-          DSLabel.subtitle2Regular(
+          DSLabel.subTitle(label: 'Today\'s Special'),
+          DSLabel.description(
             label: 'See all',
             color: AppColors.primaryColor,
           )

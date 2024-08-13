@@ -109,8 +109,8 @@ class _SlideBannersState extends State<SlideBanners> {
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeInOut,
-                  width: _currentPage == 0 ? 25 : 10,
-                  height: 10,
+                  width: _currentPage == 0 ? 28 : 7,
+                  height: 7.h,
                   child: Container(
                     decoration: BoxDecoration(
                         color: _currentPage == 0
@@ -129,9 +129,9 @@ class _SlideBannersState extends State<SlideBanners> {
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeInOut,
-                  width: _currentPage == 1 ? 25 : 10,
+                  width: _currentPage == 1 ? 28 : 7,
                   child: Container(
-                    height: 10,
+                    height: 7.h,
                     decoration: BoxDecoration(
                         color: _currentPage == 1
                             ? AppColors.primaryColor
@@ -149,9 +149,9 @@ class _SlideBannersState extends State<SlideBanners> {
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeInOut,
-                  width: _currentPage == 2 ? 25 : 10,
+                  width: _currentPage == 2 ? 28 : 7,
                   child: Container(
-                    height: 10,
+                    height: 7.h,
                     decoration: BoxDecoration(
                         color: _currentPage == 2
                             ? AppColors.primaryColor

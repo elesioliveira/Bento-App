@@ -22,7 +22,7 @@ class DescriptionCardComponent extends StatelessWidget {
         DSGaps.h12,
         Expanded(
           child: CardApresentation(
-            description: 'ORDER',
+            description: 'LOCAL',
             descriptionTwo: 'SHOP',
             widget: Icon(
               Icons.store_rounded,

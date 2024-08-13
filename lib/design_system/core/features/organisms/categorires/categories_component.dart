@@ -52,7 +52,7 @@ class _CategoriesComponentState extends State<CategoriesComponent> {
                         ),
                       ),
                     ),
-                    DSLabel.subtitle3Bold(
+                    DSLabel.description(
                       label: controller.categories[index].category,
                     )
                   ],

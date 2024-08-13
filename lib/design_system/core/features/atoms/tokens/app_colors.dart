@@ -15,4 +15,8 @@ abstract class AppColors {
   static const halalColor = Color(0xFFF2EFC2);
   static const glutenColor = Color(0xFFC4F2F2);
   static const bottomIcons = Color.fromARGB(255, 139, 165, 153);
+
+  //background color cardItem
+  static const colorOrange = Color(0xFFfaf0dc);
+  static const colorCabbage = Color(0xFFe6fadc);
 }
