@@ -19,4 +19,7 @@ abstract class AppColors {
   //background color cardItem
   static const colorOrange = Color(0xFFfaf0dc);
   static const colorCabbage = Color(0xFFe6fadc);
+
+  //first item category
+  static const backGroundFirstItem = Color(0xFFe6faf0);
 }

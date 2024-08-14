@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../atoms/tokens/gaps.dart';
 import '../../molecules/card_apresetation/card_component.dart';
 
@@ -13,10 +15,15 @@ class DescriptionCardComponent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         DSGaps.h12,
-        const Expanded(
+        Expanded(
           child: CardApresentation(
             description: 'ORDER',
             descriptionTwo: 'AGAIN',
+            widget: SvgPicture.asset(
+              'lib/design_system/assets/icons/shoppingBag.svg',
+              width: 50.w,
+              height: 50.h,
+            ),
           ),
         ),
         DSGaps.h12,
@@ -24,10 +31,10 @@ class DescriptionCardComponent extends StatelessWidget {
           child: CardApresentation(
             description: 'LOCAL',
             descriptionTwo: 'SHOP',
-            widget: Icon(
-              Icons.store_rounded,
-              color: Colors.green[900],
-              size: 50,
+            widget: SvgPicture.asset(
+              'lib/design_system/assets/icons/shop.svg',
+              width: 50.w,
+              height: 50.h,
             ),
           ),
         ),

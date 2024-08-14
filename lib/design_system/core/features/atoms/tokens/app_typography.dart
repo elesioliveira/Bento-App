@@ -15,14 +15,15 @@ class AppTypography {
         fontWeight: FontWeight.bold,
         color: color ?? AppColors.secondaryColor,
       );
-  static description({Color? color}) => GoogleFonts.raleway(
-        fontSize: 12.sp,
+  static description({Color? color, double? sizeFont}) => GoogleFonts.raleway(
         fontWeight: FontWeight.bold,
+        fontSize: sizeFont,
         color: color ?? AppColors.secondaryColor,
       );
-  static infoDescription({Color? color}) => GoogleFonts.raleway(
-        fontSize: 12.sp,
-        fontWeight: FontWeight.w600,
-        color: color ?? AppColors.secondaryColor,
-      );
+  static infoDescription({Color? color, TextDecoration? decoration}) =>
+      GoogleFonts.raleway(
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w600,
+          color: color ?? AppColors.secondaryColor,
+          textStyle: TextStyle(decoration: decoration));
 }

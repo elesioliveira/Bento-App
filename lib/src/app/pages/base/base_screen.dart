@@ -94,7 +94,7 @@ class _BaseScreenState extends State<BaseScreen> with TickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    DSLabel.title(
+                    DSLabel.subTitle(
                       label: 'Delivery',
                     ),
                     Row(

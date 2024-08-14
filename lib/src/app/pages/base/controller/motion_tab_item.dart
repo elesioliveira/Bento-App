@@ -1,13 +1,13 @@
 import 'package:bento_app/design_system/core/features/molecules/label/label.dart';
 import 'package:flutter/material.dart';
 
-const double ICON_OFF = -3;
-const double ICON_ON = 0;
-const double TEXT_OFF = 3;
-const double TEXT_ON = 1;
-const double ALPHA_OFF = 0;
-const double ALPHA_ON = 1;
-const int ANIM_DURATION = 300;
+const double iconOff = -3;
+const double iconOnn = 0;
+const double textOff = 3;
+const double textOn = 1;
+const double alphaOff = 0;
+const double alphaOn = 1;
+const int animDuration = 300;
 
 class MotionTabItem extends StatefulWidget {
   final String? title;
@@ -32,13 +32,13 @@ class MotionTabItem extends StatefulWidget {
   });
 
   @override
-  _MotionTabItemState createState() => _MotionTabItemState();
+  MotionTabItemState createState() => MotionTabItemState();
 }
 
-class _MotionTabItemState extends State<MotionTabItem> {
-  double iconYAlign = ICON_ON;
-  double textYAlign = TEXT_OFF;
-  double iconAlpha = ALPHA_ON;
+class MotionTabItemState extends State<MotionTabItem> {
+  double iconYAlign = iconOnn;
+  double textYAlign = textOff;
+  double iconAlpha = alphaOn;
 
   @override
   void initState() {
@@ -54,9 +54,9 @@ class _MotionTabItemState extends State<MotionTabItem> {
 
   _setIconTextAlpha() {
     setState(() {
-      iconYAlign = (widget.selected) ? ICON_OFF : ICON_ON;
-      textYAlign = (widget.selected) ? TEXT_ON : TEXT_OFF;
-      iconAlpha = (widget.selected) ? ALPHA_OFF : ALPHA_ON;
+      iconYAlign = (widget.selected) ? iconOff : iconOnn;
+      textYAlign = (widget.selected) ? textOn : textOff;
+      iconAlpha = (widget.selected) ? alphaOff : alphaOn;
     });
   }
 
@@ -71,7 +71,7 @@ class _MotionTabItemState extends State<MotionTabItem> {
             width: double.infinity,
             alignment: Alignment.center,
             child: AnimatedAlign(
-              duration: const Duration(milliseconds: ANIM_DURATION),
+              duration: const Duration(milliseconds: animDuration),
               alignment: Alignment(0, textYAlign),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -85,11 +85,11 @@ class _MotionTabItemState extends State<MotionTabItem> {
               height: double.infinity,
               width: double.infinity,
               child: AnimatedAlign(
-                duration: const Duration(milliseconds: ANIM_DURATION),
+                duration: const Duration(milliseconds: animDuration),
                 curve: Curves.easeIn,
                 alignment: Alignment(0, iconYAlign),
                 child: AnimatedOpacity(
-                  duration: const Duration(milliseconds: ANIM_DURATION),
+                  duration: const Duration(milliseconds: animDuration),
                   opacity: iconAlpha,
                   child: Stack(
                     alignment: Alignment.center,

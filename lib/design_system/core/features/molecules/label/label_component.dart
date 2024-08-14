@@ -5,6 +5,7 @@ class LabelComponent extends StatelessWidget {
   final Color? color;
   final TextStyle style;
   final int? maxLines;
+  final double? sizeFont;
   final TextOverflow? overflow;
   final TextAlign? textAlign;
 
@@ -16,6 +17,7 @@ class LabelComponent extends StatelessWidget {
     this.maxLines,
     this.overflow,
     this.textAlign,
+    this.sizeFont,
   });
 
   @override

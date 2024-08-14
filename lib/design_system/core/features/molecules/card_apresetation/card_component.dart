@@ -12,31 +12,35 @@ class CardApresentation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: ScreenUtilsHelpers.screenHeigth * 0.08,
-      padding: EdgeInsets.only(left: 15.w),
-      decoration: BoxDecoration(
-          color: AppColors.primaryColor,
-          borderRadius: BorderRadius.circular(10)),
-      child: Stack(
-        children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                DSLabel.subTitle(label: description ?? 'error'),
-                DSLabel.subTitle(label: descriptionTwo ?? 'error')
-              ],
+    return InkWell(
+      onTap: () {},
+      splashColor: Colors.white38,
+      child: Ink(
+        height: ScreenUtilsHelpers.screenHeigth * 0.08,
+        padding: EdgeInsets.only(left: 15.w),
+        decoration: BoxDecoration(
+            color: AppColors.primaryColor,
+            borderRadius: BorderRadius.circular(10)),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  DSLabel.subTitle(label: description ?? 'error'),
+                  DSLabel.subTitle(label: descriptionTwo ?? 'error')
+                ],
+              ),
             ),
-          ),
-          Positioned(
-            bottom: -5,
-            right: 0,
-            child: widget ?? const SizedBox(),
-          )
-        ],
+            Positioned(
+              bottom: -5.2.h,
+              right: 0,
+              child: widget ?? const SizedBox(),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -61,10 +61,10 @@ class MotionTabBar extends StatefulWidget {
             : true);
 
   @override
-  _MotionTabBarState createState() => _MotionTabBarState();
+  MotionTabBarState createState() => MotionTabBarState();
 }
 
-class _MotionTabBarState extends State<MotionTabBar>
+class MotionTabBarState extends State<MotionTabBar>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Tween<double> _positionTween;
@@ -226,7 +226,7 @@ class _MotionTabBarState extends State<MotionTabBar>
                           width: widget.tabSize! + 30,
                           child: ClipRect(
                             clipper: HalfClipper(),
-                            child: Container(
+                            child: SizedBox(
                               child: Center(
                                 child: Container(
                                   width: widget.tabSize! + 10,

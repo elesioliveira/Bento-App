@@ -5,7 +5,7 @@ import 'package:bento_app/design_system/core/features/molecules/label/label.dart
 import 'package:bento_app/design_system/core/features/organisms/item_tile/item_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../../design_system/core/features/molecules/banner_slides/slide_banners.dart';
+import '../../../../design_system/core/features/molecules/banner_slides/slide_widgets.dart';
 import '../../../../design_system/core/features/organisms/categorires/categories_component.dart';
 import '../../../../design_system/core/features/organisms/description_card_organims/description_card_component.dart';
 import '../../../../design_system/core/features/organisms/description_mode/description_mode_component.dart';
@@ -46,7 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   DSGaps.v16,
                   const DescriptionCardComponent(),
                   DSGaps.v8,
-                  const SlideBanners(),
+                  const SlideWidets(
+                    imgSvg: [
+                      'lib/design_system/assets/banners/avocado.svg',
+                      'lib/design_system/assets/banners/avocado.svg',
+                      'lib/design_system/assets/banners/avocado.svg',
+                    ],
+                  ),
                   Container(
                     width: ScreenUtilsHelpers.screenWidth,
                     padding: EdgeInsets.only(left: 10.w),

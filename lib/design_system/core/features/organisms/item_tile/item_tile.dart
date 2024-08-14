@@ -1,9 +1,11 @@
-import 'package:bento_app/design_system/core/features/atoms/tokens/app_colors.dart';
 import 'package:bento_app/design_system/core/features/molecules/label/label.dart';
 import 'package:bento_app/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../../src/app/pages/product/product_screen.dart';
+import '../../molecules/star_like/star_like_animation_widget.dart';
 
 class ItemTile extends StatefulWidget {
   final Product item;
@@ -36,7 +38,15 @@ class _ItemTileState extends State<ItemTile> {
       children: [
         // Conteúdo
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ProductScreen(
+                        item: widget.item,
+                      )),
+            );
+          },
           child: Card(
             elevation: 1,
             color: widget.backgroundColorCard ?? Colors.grey.shade400,
@@ -55,7 +65,7 @@ class _ItemTileState extends State<ItemTile> {
                       tag: widget.item.imgSvg,
                       child: SvgPicture.asset(
                         widget.item.imgSvg,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
@@ -87,30 +97,17 @@ class _ItemTileState extends State<ItemTile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      isFavorited = !isFavorited;
-                    });
-                  },
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    transitionBuilder:
-                        (Widget child, Animation<double> animation) {
-                      return FadeTransition(opacity: animation, child: child);
+                    onTap: () {
+                      setState(() {
+                        isFavorited = !isFavorited;
+                      });
                     },
-                    child: Icon(
-                      isFavorited ? Icons.star : Icons.star_border_outlined,
-                      key: ValueKey<bool>(isFavorited),
-                      color: isFavorited ? Colors.amber : Colors.black26,
-                    ),
-                  ),
-                ),
-                const Text(
-                  '4.5',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.secondaryColor),
-                )
+                    child: StarAnimationWidget(
+                        valueIcon: '4.5',
+                        isFavorited: isFavorited,
+                        colorIsFavorited: Colors.amber,
+                        iconIsFavorited: Icons.star,
+                        icon: Icons.star_border_outlined))
               ],
             ),
           ),
