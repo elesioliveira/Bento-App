@@ -43,6 +43,7 @@ dependencies:
   freezed_annotation: ^2.4.4
   fluttertoast:
   flutter_svg:
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +77,7 @@ flutter:
      - lib/design_system/assets/images/
      - lib/design_system/assets/icons/
      - lib/design_system/assets/banners/
+     - lib/design_system/assets/person_icons/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

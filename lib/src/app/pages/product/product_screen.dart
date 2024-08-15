@@ -111,6 +111,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     child: Stack(
                       children: [
                         SlideWidets(
+                          tagHero: widget.item.imgSvg,
                           imgSvg: [
                             widget.item.imgSvg,
                             widget.item.imgSvg,

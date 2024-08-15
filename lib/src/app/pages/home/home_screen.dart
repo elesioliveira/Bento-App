@@ -1,9 +1,9 @@
 import 'package:bento_app/design_system/core/extensions/screen_utils_extesion.dart';
 import 'package:bento_app/design_system/core/features/atoms/tokens/app_colors.dart';
 import 'package:bento_app/design_system/core/features/atoms/tokens/gaps.dart';
+import 'package:bento_app/design_system/core/features/molecules/custom_shimmer/custom_shimmer.dart';
 import 'package:bento_app/design_system/core/features/molecules/label/label.dart';
 import 'package:bento_app/design_system/core/features/organisms/item_tile/item_tile.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../design_system/core/features/molecules/banner_slides/slide_widgets.dart';
 import '../../../../design_system/core/features/organisms/categorires/categories_component.dart';
@@ -47,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const DescriptionCardComponent(),
                   DSGaps.v8,
                   const SlideWidets(
+                    tagHero: SizedBox(),
                     imgSvg: [
                       'lib/design_system/assets/banners/avocado.svg',
                       'lib/design_system/assets/banners/avocado.svg',
@@ -68,11 +69,30 @@ class _HomeScreenState extends State<HomeScreen> {
                       animation: controller,
                       builder: (context, child) {
                         if (controller.loading) {
-                          return const Center(
-                            child: CupertinoActivityIndicator(),
+                          //animation with shimmer simulation loading
+                          return SizedBox(
+                            width: ScreenUtilsHelpers.screenWidth,
+                            height: ScreenUtilsHelpers.screenHeigth / 4,
+                            child: GridView.count(
+                              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                              physics: const BouncingScrollPhysics(),
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 12,
+                              crossAxisSpacing: 12,
+                              childAspectRatio: 9.8 / 11.5,
+                              children: List.generate(
+                                3,
+                                (index) => CustomShimmer(
+                                  height: double.infinity,
+                                  width: double.infinity,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
                           );
                         }
                         if (controller.products.isNotEmpty) {
+                          //if list of products is not empty
                           return SizedBox(
                             width: ScreenUtilsHelpers.screenWidth,
                             height: ScreenUtilsHelpers.screenHeigth / 4,

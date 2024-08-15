@@ -5,8 +5,9 @@ import '../../atoms/tokens/app_colors.dart';
 import '../../atoms/tokens/gaps.dart';
 
 class SlideWidets extends StatefulWidget {
-  const SlideWidets({super.key, required this.imgSvg});
+  const SlideWidets({super.key, required this.imgSvg, required this.tagHero});
   final List<String> imgSvg;
+  final Object tagHero;
 
   @override
   State<SlideWidets> createState() => _SlideWidetsState();
@@ -70,9 +71,12 @@ class _SlideWidetsState extends State<SlideWidets> {
                   margin: const EdgeInsets.symmetric(horizontal: 5.0),
                   child: ClipRRect(
                     clipBehavior: Clip.antiAlias,
-                    child: SvgPicture.asset(
-                      widget.imgSvg[0],
-                      fit: BoxFit.contain,
+                    child: Hero(
+                      tag: widget.tagHero,
+                      child: SvgPicture.asset(
+                        widget.imgSvg[0],
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),

@@ -4,6 +4,7 @@ import 'package:bento_app/design_system/core/features/molecules/label/label.dart
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../design_system/core/features/atoms/tokens/app_colors.dart';
 import '../home/home_screen.dart';
@@ -114,11 +115,15 @@ class _BaseScreenState extends State<BaseScreen> with TickerProviderStateMixin {
                   ],
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 12, right: 15, bottom: 12),
+              Padding(
+                padding: const EdgeInsets.only(top: 12, right: 15, bottom: 12),
                 child: CircleAvatar(
-                  backgroundColor: AppColors.primaryColor,
-                  child: Icon(Icons.person),
+                  backgroundColor: AppColors.vegetarianColor,
+                  child: SvgPicture.asset(
+                    'lib/design_system/assets/person_icons/person.svg',
+                    width: 20.w,
+                    height: 20.h,
+                  ),
                 ),
               )
             ],
