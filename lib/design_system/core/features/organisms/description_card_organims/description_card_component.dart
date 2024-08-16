@@ -19,10 +19,12 @@ class DescriptionCardComponent extends StatelessWidget {
           child: CardApresentation(
             description: 'ORDER',
             descriptionTwo: 'AGAIN',
+            bottom: -2.h,
+            right: -1,
             widget: SvgPicture.asset(
-              'lib/design_system/assets/icons/shoppingBag.svg',
-              width: 50.w,
-              height: 50.h,
+              'lib/design_system/assets/icons/bagShopping.svg',
+              width: 60.w,
+              height: 60.h,
             ),
           ),
         ),
@@ -31,10 +33,12 @@ class DescriptionCardComponent extends StatelessWidget {
           child: CardApresentation(
             description: 'LOCAL',
             descriptionTwo: 'SHOP',
+            bottom: -1.1.h,
+            right: -1.w,
             widget: SvgPicture.asset(
               'lib/design_system/assets/icons/shop.svg',
-              width: 50.w,
-              height: 50.h,
+              width: 65.w,
+              height: 65.h,
             ),
           ),
         ),

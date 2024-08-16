@@ -5,10 +5,17 @@ import '../../atoms/tokens/app_colors.dart';
 
 class CardApresentation extends StatelessWidget {
   const CardApresentation(
-      {super.key, this.description, this.widget, this.descriptionTwo});
+      {super.key,
+      this.description,
+      this.widget,
+      this.descriptionTwo,
+      this.bottom,
+      this.right});
   final String? description;
   final String? descriptionTwo;
   final Widget? widget;
+  final double? bottom;
+  final double? right;
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +42,8 @@ class CardApresentation extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: -5.2.h,
-              right: 0,
+              bottom: bottom,
+              right: right,
               child: widget ?? const SizedBox(),
             )
           ],

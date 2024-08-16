@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../design_system/core/features/atoms/tokens/app_colors.dart';
+import '../../../../design_system/core/features/organisms/app_bar_widget/app_bar_widget.dart';
 import '../home/home_screen.dart';
 import 'controller/motion_tab_bar.dart';
 import 'controller/tab_bar_controller.dart';
@@ -83,51 +84,7 @@ class _BaseScreenState extends State<BaseScreen> with TickerProviderStateMixin {
         ),
         appBar: AppBar(
           backgroundColor: Colors.white,
-          flexibleSpace: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    DSLabel.subTitle(
-                      label: 'Delivery',
-                    ),
-                    Row(
-                      children: [
-                        DSLabel.infoDescription(
-                          label: 'Bacangan, Sambit',
-                          color: Colors.grey.shade400,
-                        ),
-                        DSGaps.h2,
-                        Icon(
-                          size: 18.h,
-                          Icons.keyboard_arrow_down,
-                          color: AppColors.secondaryColor,
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 12, right: 15, bottom: 12),
-                child: CircleAvatar(
-                  backgroundColor: AppColors.vegetarianColor,
-                  child: SvgPicture.asset(
-                    'lib/design_system/assets/person_icons/person.svg',
-                    width: 20.w,
-                    height: 20.h,
-                  ),
-                ),
-              )
-            ],
-          ),
+          flexibleSpace: const AppBarWidget(),
         ),
         body: TabBarView(
           physics:

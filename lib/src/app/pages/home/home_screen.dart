@@ -6,6 +6,7 @@ import 'package:bento_app/design_system/core/features/molecules/label/label.dart
 import 'package:bento_app/design_system/core/features/organisms/item_tile/item_tile.dart';
 import 'package:flutter/material.dart';
 import '../../../../design_system/core/features/molecules/banner_slides/slide_widgets.dart';
+import '../../../../design_system/core/features/molecules/classification/classification_widget.dart';
 import '../../../../design_system/core/features/organisms/categorires/categories_component.dart';
 import '../../../../design_system/core/features/organisms/description_card_organims/description_card_component.dart';
 import '../../../../design_system/core/features/organisms/description_mode/description_mode_component.dart';
@@ -54,17 +55,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       'lib/design_system/assets/banners/avocado.svg',
                     ],
                   ),
-                  Container(
-                    width: ScreenUtilsHelpers.screenWidth,
-                    padding: EdgeInsets.only(left: 10.w),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: DSLabel.subTitle(label: 'Shop by category'),
-                    ),
-                  ),
+
+                  const ClassificationWidget(
+                      titleDescription: 'Shop by category'),
+
                   const CategoriesComponent(),
                   DSGaps.v12,
-                  const DescriptionModeComponent(),
+
+                  const TodaySpecialWidget(),
+                  //List products
                   AnimatedBuilder(
                       animation: controller,
                       builder: (context, child) {

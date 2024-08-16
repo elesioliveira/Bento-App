@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../atoms/tokens/app_colors.dart';
 import '../../molecules/label/label.dart';
 
-class DescriptionModeComponent extends StatelessWidget {
-  const DescriptionModeComponent({super.key});
+class TodaySpecialWidget extends StatelessWidget {
+  const TodaySpecialWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
